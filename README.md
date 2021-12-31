@@ -16,13 +16,13 @@ Between 2020 and 2021, California has experienced over 17,000 fires and nearly 7
 
 **_Visualization 1:  AQI levels by month_**
 
-![image alt text](image_0.png)
+![image_0](https://user-images.githubusercontent.com/76192765/147841167-af288aa3-9466-4e50-8b40-d449ecbe0c6b.png)
 
 Above is a line plot using the seaborn package, it displays the temporality of AQI levels (y-axis) over the months (x-axis).  The largest spikes occur during peak wildfire season between the months of August and October.  We were able to leverage this knowledge about the temporality by incorporating the date as a feature in our modeling portion of the project.
 
 **_Visualization 2: AQI correlation with selected features_**
 
-![image alt text](image_1.png)
+![image_1](https://user-images.githubusercontent.com/76192765/147841166-bb4dac24-804a-4f06-9f10-2c92e04ce3eb.png)
 
 Our second visualization is a pairplot that shows the correlation between multiple features in our dataset and AQI.  Features of particular interest were wind speed, nitrogen dioxide levels, ozone, temperature, and sulphur dioxide levels.  Again, this insight aided us in better choosing features for our models by determining which features share the strongest correlation with AQI levels.
 
@@ -62,13 +62,13 @@ We hypothesize that wildfires are strongly positively correlated with higher AQI
 
 **_Guided Modeling:_**
 
-![image alt text](image_2.png)
+![image_2](https://user-images.githubusercontent.com/76192765/147841165-e03e3c1e-56e2-4a91-9cc8-4a30f7076364.png)
 
 	Our guided modeling first merged the traffic dataset (AADT) with our AQI data.  We then executed some feature engineering and used log AADT, Temperature, NO2, Setting, and Elevation as the features for our design matrix (X/inputs).  We then employed a random  forest regressor model to predict AQI (Y/output).  Our task; however, was to categorize our AQI predictions as good, moderate, unhealthy for sensitive groups, unhealthy, very unhealthy, or hazardous.  Thus, after predicting AQI we sorted our output into these categories and checked the performance of our model using the validation/testing dataset to calculate model error.
 
 **_Open-Ended Modeling:_**
 
-![image alt text](image_3.png)
+![image_3](https://user-images.githubusercontent.com/76192765/147841164-96b26ecb-bd01-4a3c-9b47-8e6bc0ceab12.png)
 
 The open ended modeling portion of the project involved introducing an external dataset containing many wildfire features which was merged upon county code of the AQI dataset.  The features used in this model are median_dailyacres (median of daily acres burned in all fires for a particular county thus far); mean_FireDurationDays (average length in days of all the fires for a particular county thus far); and count_ExtremeOrActiveBehavior (the number of fires amongst all the fires for a particular county thus far which have been recorded as having extreme or very active behavior) - a binary feature. The features were selected to test the hypothesis that more severe fires would lead to substantially worse air quality in surrounding regions.  The output/response variable for our model was AQI which could be categorized into different levels.  With such an outstanding result from the guided modeling using a random forest regressor, we decided to again use the same model type for this section.  The reason we chose to regress is because our hypothesis stated that we believed wildfire features were significantly (positively) correlated with AQI levels.
 
@@ -94,7 +94,7 @@ The metrics and the plots for the above mentioned baseline model are shown below
 
 The plot below is for the Linear regression model that we implemented. The MSE and MAE are definitely low due to the fact that the range of the points is very low as well. However, it is not clear that a linear trend is correct for the actual and predicted values.
 
-![image alt text](image_4.png)
+![image_4](https://user-images.githubusercontent.com/76192765/147841163-6f80580f-7677-4e3e-ad4e-aef1fc52d4b3.png)
 
 **Part 2**
 
@@ -104,7 +104,7 @@ The metrics and the plots for the above mentioned baseline model are shown below
 
 The plot below is for the Linear regression model that we implemented. As can be seen, the number of points increasing definitely improved the regression line that was fit to the model. The MSE and MAE definitely increased due to the fact that the range of the points increased. However, it is much more clear now than before that a linear trend is correct for the actual and predicted values.
 
-![image alt text](image_5.png)
+![image_5](https://user-images.githubusercontent.com/76192765/147841162-c34b7094-74a6-4ff0-8c65-688732702924.png)
 
 **_7	Model Improvement_**
 
